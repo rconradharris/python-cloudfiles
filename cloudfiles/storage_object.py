@@ -277,7 +277,7 @@ class Object(object):
         @type callback: callable(transferred, size)
         """
         self._name_check()
-        if isinstance(data, file):
+        if hasattr(data, 'read'):
             # pylint: disable-msg=E1101
             try:
                 data.flush()
